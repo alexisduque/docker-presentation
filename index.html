@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Developers Forum - Docker for OpenMRS</title>
+        <meta name="description" content="Presentation for OpenMRS developers forum about Docker">
+        <meta name="author" content="Alexis DUQUE">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/openmrs.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script><style type="text/css"></style><link rel="stylesheet" href="css/paper.css" type="text/css" media="print">
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    <style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+    <body cz-shortcut-listen="true" data-gclp-initialized="true" data-gistbox-initialized="true" style="transition: -webkit-transform 0.8s ease; -webkit-transition: -webkit-transform 0.8s ease;">
+    <div class="reveal default center" data-transition-speed="default">
+        <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides" style="width: 960px; height: 700px; zoom: 0.8292857142857143;">
+<!--
+=========================================================================================================================================================
+=========================================================================================================================================================
+   Introduction
+=========================================================================================================================================================
+=========================================================================================================================================================
+-->
+        <!-- SLIDE 0 -->
+        <section class="present" style="top: -197.5px; display: block;">
+            <h1 class="openmrs-title">Docker for OpenMRS</h1>
+            <h3>Developers Forum</h3>
+            <p><img height="200px" src="images/logo.svg" alt="OpenMRS"></p>
+            <p>
+                <small>August, 28st 2014 / <a href="http://www.spicymoka.org/" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexisd61@gmail.com</span></a></small>
+            </p>
+        </section>
+        <!--./SLIDE 0 -->
+
+<!--
+=========================================================================================================================================================
+=========================================================================================================================================================
+   Presentation
+=========================================================================================================================================================
+=========================================================================================================================================================
+-->
+        <!-- SLIDE 1/X -->
+	    <section class="stack future" data-previous-indexv="0" style="top: 0px; display: block;">
+			<section style="top: -280px; display: block;" class="">
+				<h1>Docker.io</h1>
+				<img height="400px" src="images/logo-docker.png" alt="logo docker">
+			</section>
+			<section style="top: -269.5px; display: block;" class="future">
+				<h2>Components</h2>
+				<br>
+				<ul>
+					<li>Docker Engine</li>
+					<li>Docker Hub</li>
+				</ul>
+			</section>
+	    </section>
+        <!--./SLIDE 1/X -->
+<!--
+=========================================================================================================================================================
+=========================================================================================================================================================
+    Questions ?
+=========================================================================================================================================================
+=========================================================================================================================================================
+-->
+        <section class="future" style="top: -198px; display: block;">
+            <h1>QUESTIONS ?</h1>
+            <h3>Developers Forum</h3>
+            <p><img height="200px" src="images/logo-docker-openmrs.png" alt="OpenMRS"></p>
+             <p>
+                <small>August, 28st 2014 / <a href="http://alexisduque.github.com" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexisd61@gmail.com</span></a></small>
+            </p>
+            <p><small><a href="http://alexisduque.github.com/docker-presentation" class="roll"><span data-title="http://alexisduque.github.com/docker-presentation">http://alexisduque.github.com/docker-presentation</span></a></small></p>
+        </section>
+	</div>
+    <div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" style="display: block;"><div class="navigate-left"></div><div class="navigate-right enabled"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div class="state-background"></div><div class="pause-overlay"></div></div>
+
+    <ul class="watermark">
+        <li style="line-height:100px;vertical-align:bottom"><img height="70" src="images/OMRSAtlas.svg" alt="OpenMRS"></li>
+        <li><img height="70" src="images/docker.png" alt="Docker"></li>
+    </ul>
+
+    <script src="js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+    </script><script type="text/javascript" src="js/highlight.js"></script><script type="text/javascript" src="js/zoom.js"></script><script type="text/javascript" src="js/notes.js"></script>
+    
+
+<form id="gclp-frame-form" target="gclp-frame" method="post" style="display: none;"></form></body></html>
