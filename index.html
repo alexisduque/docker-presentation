@@ -35,7 +35,7 @@
             <h3>Developers Forum</h3>
             <p><img height="200px" src="images/logo.svg" alt="OpenMRS"></p>
             <p>
-                <small>August, 28st 2014 / <a href="http://www.spicymoka.org/" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexisd61@gmail.com</span></a></small>
+                <small>August, 28st 2014 / <a href="http://alexisduque.github.io" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexisd61@gmail.com</span></a></small>
             </p>
         </section>
         <!--./SLIDE 0 -->
@@ -84,7 +84,7 @@
             <section style="top: -280px; display: block;" class="">
                 <h2>Requirements and Installation</h2>
                 <p><a href="https://docs.docker.com/installation/#installation">https://docs.docker.com/installation/#installation</a><p>
-                <p>Require Linux-specific features, but solution for non UNIX users !</p>
+                <p>Require Linux-specific features, but solution for others !</p>
                 <br>
                 <p> Lucky Ubuntu Users</p>
                 <p><pre><code>curl -sSL https://get.docker.io/ubuntu/ | sudo sh</code></pre></p>
@@ -100,55 +100,96 @@
 =========================================================================================================================================================
 =========================================================================================================================================================
 -->
-        <!-- SLIDE 1/X -->
+        <!-- SLIDE 2/X -->
         <section class="stack future" data-previous-indexv="0" style="top: 0px; display: block;">
-            <section style="top: -280px; display: block;" class="">
-                <h1>Docker.io</h1>
-                <img height="400px" src="images/logo-docker.png" alt="logo docker">
-            </section>
             <section style="top: -269.5px; display: block;" class="future">
                 <h1>Docker Basics</h1>
-                <br>
-                <p><img height="200px" src="images/logo.svg" alt="OpenMRS"></p>
+                <h3>Work with image and container</h3>
+                <p><img height="480px" src="images/ContainerImage.png" alt="OpenMRS"></p>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
                 <h2>Docker Pull</h2>
-                <br>
-                <p>Pull your first OpenMRS image</p>
+                <h3>Pull your first OpenMRS image</h3>
                 <p><pre><code>docker pull openmrs/atlas:dev</code></pre></p>
-                <pre>Clone dev image from openmrs/atlas repo to your local repository<pre>
-                </ul>
+                <p>Clone <i>dev</i> image from openmrs/atlas repo to your local repository</p>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
                 <h2>Docker Run</h2>
-                <h4>Build a container using an image</h4>
+                <h3>Create and run a container using an image</h3>
+                <p><pre><code>                 docker run [params] openmrs/atlas:dev</code></pre></p>
                 <p>Lot of parameters - 3 modes :</p>
                 <ul>
-                    <li>Background</li>
-                    <li>Foreground (default) : attach stdout/err</li>
-                    <li>Interactive : attach stdin</li>
-                </ul>
-                <p>Foreground let use show logs</p>
-            </section>
-            <section style="top: -269.5px; display: block;" class="future">
-                <h2>Docker Pull</h2>
-                <br>
-                <p>Pull your first OpenMRS image</p>
-                <p><pre><code>docker pull openmrs/atlas:dev</code></pre></p>
-                <pre>Clone dev image from openmrs/atlas repo to your local repository<pre>
+                    <li><i>Background</i></li>
+                    <li><i>Foreground</i> (default) : attach stdout/err</li>
+                    <li><i>Interactive</i> : attach stdin</li>
                 </ul>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
-                <h2>Docker Pull</h2>
-                <br>
-                <p>Pull your first OpenMRS image</p>
-                <p><pre><code>docker pull openmrs/atlas:dev</code></pre></p>
-                <pre>Clone dev image from openmrs/atlas repo to your local repository<pre>
-                </ul>
+                <h2>Docker Run - Port</h2>
+                <h3>Port forwarding with the host</h3>
+                <p><pre><code>    docker run -P [host_port:container_port] openmrs/modulus:dev</code></pre></p>
+                <p><i>Example : 8080 container port to 80 host port</i></p>
+                <p><pre><code>    docker run -P 80:8080 openmrs/modulus:dev</code></pre></p>
+                <p>80 host port shouldn't be used !</p>
+            </section>
+            <section style="top: -269.5px; display: block;" class="future">
+                <h2>Docker Run - Volume</h2>
+                <h3>Shared host folder with the container</h3>
+                <p><pre><code>    docker run -v [host_folder:container_folder] openmrs/modulus:dev</code></pre></p>
+                <p><i>Example : mount /opt/dev to /opt in the container</i></p>
+                <p><pre><code>    docker run -v /opt/dev:/opt openmrs/modulus:dev</code></pre></p>
+                <p>Absolute path is required !</p>
+            </section>
+            <section style="top: -269.5px; display: block;" class="future">
+                <h2>Docker Run - Divers</h2>
+                <h3>Others userfull parameters</h3>
+                <p><i>Define hostname inside the container</i></p>
+                <p><pre><code>      docker run -h [hostname] openmrs/modulus:dev</code></pre></p>
+                <p><i>Define container name (~ container id)</i></p>
+                <p><pre><code>      docker run --name [container_name] openmrs/modulus:dev</code></pre></p>
+            </section>
+             <section style="top: -269.5px; display: block;" class="future">
+                <h2>Docker Run - Stop/Start</h2>
+                <h3>Start and Stop a container (!= RUN )</h3>
+                <p><i>Start a container from your local registry </i></p>
+                <p><pre><code>     docker start [container_name] | ex: docker start modulus</code></pre></p>
+                <p><i>Stop a running container</i></p>
+                <p><pre><code>     docker stop [container_name] | ex: docker stop modulus</code></pre></p>
             </section>
         </section>
         <!--./SLIDE 1/X -->
 <!--
+=========================================================================================================================================================
+=========================================================================================================================================================
+   Demo
+=========================================================================================================================================================
+=========================================================================================================================================================
+-->
+        <!-- SLIDE 3 -->
+        <section class="present" style="top: -197.5px; display: block;">
+            <h1 class="openmrs-title">Get started !</h1>
+            <h3><a href="http://alexisduque.github.io/blog/2014/08/10/docker-for-developers/">HACK OpenMRS Atlas with Docker</a></h3>
+            <p><img height="450px" src="images/atlas.png" alt="OpenMRS Atlas"></p>
+        </section>
+        <!--./SLIDE 0 -->
+<!--
+=========================================================================================================================================================
+=========================================================================================================================================================
+   Demo
+=========================================================================================================================================================
+=========================================================================================================================================================
+-->
+        <!-- SLIDE 3 -->
+        <section class="present" style="top: -197.5px; display: block;">
+            <h1 class="openmrs-title">What's Next ?</h1>
+            <br>
+            <h3>Share your container</h3>
+            <p><pre><code>docker commit [container_name] repo:image | docker push repo:image</code></pre></p>
+            <br>
+            <h3>Use Docker for production</h3>
+        </section>
+        <!--./SLIDE 0 -->
+
 <!--
 =========================================================================================================================================================
 =========================================================================================================================================================
