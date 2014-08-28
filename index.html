@@ -43,14 +43,10 @@
                 <h2>OpenMRS Atlas</h2>
                 <h4><a href="https://atlas.openmrs.org">atlas.openmrs.org</a></h4>
                 <ul>
-                    <li>Anyone in the community can register his marker</li>
-                    <ul style="list-style-type:circle;">
-                        <li>Just sign in with your OpenMRS ID </li>
-                        <li>Dev, organiyation can join the Atlas !</li>
-                    </ul>
-                    <br>
+                    <li>Anyone in the community can register a marker using his ID</li>
                     <li>Implementations can automate marker update with the module</li>
                 </ul>
+                <a href="https://atlas.openmrs.org"><img height="300px" src="images/atlas.png" alt="logo docker" style="margin-right:20px"></a>
             </section>
             <section style="top: -280px; display: block;" class="">
                     <h3>From ...</h3>
@@ -182,7 +178,17 @@
                 <p>Absolute path is required !</p>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
-                <h2>Docker Run - Divers</h2>
+                <h2>Docker Run - Env variables</h2>
+                <h3>Define container environement variable</h3>
+                <br>
+                <p><pre><code>   docker run -e VAR_NAME=value  -e VAR_NAME2=value2 openmrs/atlas:2.0-dev</code></pre></p>
+                <br>
+                <p>Example : define HOST_IP in the container<p>
+                <p><pre><code>   docker run -e HOST_IP=127.0.0.1 openmrs/atlas:2.0-dev</code></pre></p>
+                <br>
+            </section>
+            <section style="top: -269.5px; display: block;" class="future">
+                <h2>Docker Run - Others</h2>
                 <h3>Others userfull parameters</h3>
                 <p><i>Define hostname inside the container</i></p>
                 <p><pre><code>      docker run -h [hostname] openmrs/atlas:2.0-dev</code></pre></p>
