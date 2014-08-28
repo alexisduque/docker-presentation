@@ -31,12 +31,52 @@
 -->
         <!-- SLIDE 0 -->
         <section class="present" style="top: -197.5px; display: block;">
-            <h1 class="openmrs-title">Docker for OpenMRS</h1>
-            <h3>Developers Forum</h3>
-            <p><img height="200px" src="images/logo.svg" alt="OpenMRS"></p>
-            <p>
-                <small>August, 28st 2014 / <a href="http://alexisduque.github.io" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexisd61@gmail.com</span></a></small>
-            </p>
+            <section style="top: -280px; display: block;" class="">
+                <h1 class="openmrs-title">Docker for OpenMRS</h1>
+                <h3>Developers Forum</h3>
+                <img height="200px" src="images/logo.svg" alt="OpenMRS"></p>
+                <p>
+                    <small>August, 28st 2014 / <a href="http://alexisduque.github.io" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexisd61@gmail.com</span></a></small>
+                </p>
+            </section>
+            <section style="top: -280px; display: block;" class="">
+                <h2>OpenMRS Atlas</h2>
+                <h4><a href="https://atlas.openmrs.org">atlas.openmrs.org</a></h4>
+                <ul>
+                    <li>Anyone in the community can register his marker</li>
+                    <ul style="list-style-type:circle;">
+                        <li>Just sign in with your OpenMRS ID </li>
+                        <li>Dev, organiyation can join the Atlas !</li>
+                    </ul>
+                    <br>
+                    <li>Implementations can automate marker update with the module</li>
+                </ul>
+            </section>
+            <section style="top: -280px; display: block;" class="">
+                    <h3>From ...</h3>
+                    <br>
+                    <img height="100px" src="images/phplogo.png" alt="logo docker" style="margin-right:20px">
+                    <img height="100px" src="images/mysql.png" alt="logo docker" style="margin-right:20px">
+                    <img width="250px" src="images/feather.gif" alt="logo docker" style="margin-right:20px">
+                    <p><br></p>
+                    <p>openmrs.org/atlas</p>
+            </section>
+            <section style="top: -80px; display: block;" class="">
+                <a href="http://atlas.openmrs.org"><h3>To ...</h3></a>
+                <p>
+                    <img height="100px" src="images/phantomjs.png" alt="logo docker" style="margin-right:30px">
+                    <img width="300px" src="images/openmrsid.png" alt="logo docker" style="margin-right:30px">
+                    <img height="150px" src="images/composer.png" alt="logo docker" style="margin-right:30px">
+                    <img height="120px" src="images/laravel.png" alt="logo docker" style="margin-right:30px">
+                <p>
+                    <img height="100px" src="images/phplogo.png" alt="logo docker" style="margin-right:30px">
+                    <img height="100px" src="images/mysql.png" alt="logo docker" style="margin-right:30px">
+                    <img width="250px" src="images/feather.gif" alt="logo docker" style="margin-right:30px">
+                </p>
+                <p><br></p>
+                <p>atlas.openmrs.org</p>
+                <br>
+            </section>
         </section>
         <!--./SLIDE 0 -->
 
@@ -60,6 +100,7 @@
                     <li>Find a way to easier deploy OpenMRS Atlas</li>
                     <li>Develop and hack Atlas everywhere</li>
                     <li>Easily distribute, share and get new contributors</li>
+                    <li>Quicly test Atlas module accross different OpenMRS version</li>
                 </ul>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
@@ -104,19 +145,19 @@
         <section class="stack future" data-previous-indexv="0" style="top: 0px; display: block;">
             <section style="top: -269.5px; display: block;" class="future">
                 <h1>Docker Basics</h1>
-                <h3>Work with image and container</h3>
+                <h3>Work with images and containers</h3>
                 <p><img height="480px" src="images/ContainerImage.png" alt="OpenMRS"></p>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
                 <h2>Docker Pull</h2>
                 <h3>Pull your first OpenMRS image</h3>
-                <p><pre><code>docker pull openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>docker pull openmrs/atlas:2.0-dev</code></pre></p>
                 <p>Clone <i>dev</i> image from openmrs/atlas repo to your local repository</p>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
                 <h2>Docker Run</h2>
                 <h3>Create and run a container using an image</h3>
-                <p><pre><code>                 docker run [params] openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>                 docker run [params] openmrs/atlas:2.0-dev</code></pre></p>
                 <p>Lot of parameters - 3 modes :</p>
                 <ul>
                     <li><i>Background</i></li>
@@ -127,26 +168,26 @@
             <section style="top: -269.5px; display: block;" class="future">
                 <h2>Docker Run - Port</h2>
                 <h3>Port forwarding with the host</h3>
-                <p><pre><code>    docker run -P [host_port:container_port] openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>    docker run -P [host_port:container_port] openmrs/atlas:2.0-dev</code></pre></p>
                 <p><i>Example : 8080 container port to 80 host port</i></p>
-                <p><pre><code>    docker run -P 80:8080 openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>    docker run -P 80:8080 openmrs/atlas:2.0-dev</code></pre></p>
                 <p>80 host port shouldn't be used !</p>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
                 <h2>Docker Run - Volume</h2>
                 <h3>Shared host folder with the container</h3>
-                <p><pre><code>    docker run -v [host_folder:container_folder] openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>    docker run -v [host_folder:container_folder] openmrs/atlas:2.0-dev</code></pre></p>
                 <p><i>Example : mount /opt/dev to /opt in the container</i></p>
-                <p><pre><code>    docker run -v /opt/dev:/opt openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>    docker run -v /opt/dev:/opt openmrs/atlas:2.0-dev</code></pre></p>
                 <p>Absolute path is required !</p>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
                 <h2>Docker Run - Divers</h2>
                 <h3>Others userfull parameters</h3>
                 <p><i>Define hostname inside the container</i></p>
-                <p><pre><code>      docker run -h [hostname] openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>      docker run -h [hostname] openmrs/atlas:2.0-dev</code></pre></p>
                 <p><i>Define container name (~ container id)</i></p>
-                <p><pre><code>      docker run --name [container_name] openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>      docker run --name [container_name] openmrs/atlas:2.0-dev</code></pre></p>
             </section>
              <section style="top: -269.5px; display: block;" class="future">
                 <h2>Docker Run - Stop/Start</h2>
@@ -161,7 +202,7 @@
                 <h3>Remove useless containers or images</h3>
                 <p><i>Delete a single container or image (-f to force) </i></p>
                 <p><pre><code>     docker rm -f [container_name] | ex: docker rm atlas </code></pre></p>
-                <p><pre><code>     docker rmi [image_name] | ex: docker rmi openmrs/atlas:dev</code></pre></p>
+                <p><pre><code>     docker rmi [image_name] | ex: docker rmi openmrs/atlas:2.0-dev</code></pre></p>
                 <p><i>Clean all containers and untagged images</i></p>
                 <p><pre><code>     docker rm `docker ps --no-trunc -aq` </code></pre></p>
                 <p><pre><code>     docker rmi $(sudo docker images -f "dangling=true" -q)</code></pre></p>
