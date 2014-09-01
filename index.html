@@ -33,32 +33,32 @@
         <section class="present" style="top: -197.5px; display: block;">
             <section style="top: -280px; display: block;" class="">
                 <h1 class="openmrs-title">Docker for OpenMRS</h1>
-                <h3>Developers Forum</h3>
+                <h3>An environment for OpenMRS Atlas</h3>
                 <img height="200px" src="images/logo.svg" alt="OpenMRS"></p>
                 <p>
-                    <small>August, 28st 2014 / <a href="http://alexisduque.github.io" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexisd61@gmail.com</span></a></small>
+                    <small>August 2014 / <a href="http://alexisduque.github.io" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexis.duque@openmrs.org</span></a></small>
                 </p>
             </section>
             <section style="top: -280px; display: block;" class="">
-                <h2>OpenMRS Atlas</h2>
-                <h4><a href="https://atlas.openmrs.org">atlas.openmrs.org</a></h4>
-                <ul>
-                    <li>Anyone in the community can register a marker using his ID</li>
-                    <li>Implementations can automate marker update with the module</li>
-                </ul>
-                <a href="https://atlas.openmrs.org"><img height="300px" src="images/atlas.png" alt="logo docker" style="margin-right:20px"></a>
+                <h2>Summary</h2>
+                <br>
+                <ol>
+                    <li>Atlas presentation</li>
+                    <li>Docker introduction</li>
+                    <li>Docker Basics : work with containers</li>
+                    <li>Tutorial : Contribute using Atlas docker image</li>
+                    <li>Next Steps</li>
+                </ol>
             </section>
             <section style="top: -280px; display: block;" class="">
-                    <h3>From ...</h3>
-                    <br>
-                    <img height="100px" src="images/phplogo.png" alt="logo docker" style="margin-right:20px">
-                    <img height="100px" src="images/mysql.png" alt="logo docker" style="margin-right:20px">
-                    <img width="250px" src="images/feather.gif" alt="logo docker" style="margin-right:20px">
-                    <p><br></p>
-                    <p>openmrs.org/atlas</p>
+                <h2>OpenMRS Atlas</h2>
+                <h4><a href="https://atlas.openmrs.org">atlas.openmrs.org</a></h4>  
+                <p><i>A website on which members of the OpenMRS Community can register their site(s).</i><br></p>
+                <br>
+                <a href="https://atlas.openmrs.org"><img height="350px" src="images/atlas.png" alt="logo docker" style="margin-right:20px"></a>
             </section>
             <section style="top: -80px; display: block;" class="">
-                <a href="http://atlas.openmrs.org"><h3>To ...</h3></a>
+                <a href="http://atlas.openmrs.org"><h3>Atlas environment</h3></a>
                 <p>
                     <img height="100px" src="images/phantomjs.png" alt="logo docker" style="margin-right:30px">
                     <img width="300px" src="images/openmrsid.png" alt="logo docker" style="margin-right:30px">
@@ -70,7 +70,7 @@
                     <img width="250px" src="images/feather.gif" alt="logo docker" style="margin-right:30px">
                 </p>
                 <p><br></p>
-                <p>atlas.openmrs.org</p>
+                <p><small>Apache HTTP, PHP 5.5, MySQL 5, phantomJS 1.9.7, Composer, Laravel4, OpenMRS ID, ...</small></p>
                 <br>
             </section>
         </section>
@@ -196,12 +196,20 @@
                 <p><pre><code>      docker run --name [container_name] openmrs/atlas:2.0-dev</code></pre></p>
             </section>
              <section style="top: -269.5px; display: block;" class="future">
-                <h2>Docker Run - Stop/Start</h2>
+                <h2>Docker Stop/Start</h2>
                 <h3>Start and Stop a container (!= RUN )</h3>
                 <p><i>Start a container from your local registry </i></p>
                 <p><pre><code>     docker start [container_name] | ex: docker start atlas</code></pre></p>
                 <p><i>Stop a running container</i></p>
                 <p><pre><code>     docker stop [container_name] | ex: docker stop atlas</code></pre></p>
+            </section>
+            <section style="top: -269.5px; display: block;" class="future">
+                <h2>See what's happening</h2>
+                <br>    
+                <p><i>Show running container </i></p>
+                <p><pre><code>     docker ps</code></pre></p>
+                <p><i>Show images on your registry</i></p>
+                <p><pre><code>     docker images</code></pre></p>
             </section>
             <section style="top: -269.5px; display: block;" class="future">
                 <h2>Clean UP :-)</h2>
@@ -254,23 +262,15 @@
 =========================================================================================================================================================
 =========================================================================================================================================================
 -->
-        <section class="future" style="top: -198px; display: block;">
-            <h1>QUESTIONS ?</h1>
-            <h3>Developers Forum</h3>
-            <p><img height="200px" src="images/logo-docker-openmrs.png" alt="OpenMRS"></p>
-             <p>
-                <small>August, 28st 2014 / <a href="http://alexisduque.github.com" class="roll"><span data-title="irc:alexis_d">Alexis DUQUE</span></a> / <a href="mailto:alexisd61@gmail.com" class="roll"><span data-title="irc:alexis_d">alexisd61@gmail.com</span></a></small>
-            </p>
-            <p><small><a href="http://alexisduque.github.com/docker-presentation" class="roll"><span data-title="http://alexisduque.github.com/docker-presentation">http://alexisduque.github.com/docker-presentation</span></a></small></p>
-        </section>
 
         <section class="future" style="top: -198px; display: block;">
             <h1>LEARN MORE</h1>
-            <br>
-            <p><a href="https://docs.docker.com/userguide/">Docker offical user guide</a></p>
-            <p><a href="https://blog.docker.com/">Docker blog</a></p>
-            <p><a href="http://www.meetup.com/Docker-Online-Meetup/">Docker Meetup and Webcast</a></p>
-            <p><a href="http://stackoverflow.com/search?q=docker">Stackoverflow</a></p>
+            <p><img height="200px" src="images/logo-docker-openmrs.png" alt="OpenMRS"></p>
+            <small><a href="https://docs.docker.com/userguide/" class="roll">https://docs.docker.com/userguide</a> -
+            <a href="https://blog.docker.com/" class="roll">https://blog.docker.com/</a>
+            <p><a href="http://stackoverflow.com/search?q=docker">http://stackoverflow.com/search?q=docker</a></p>
+            <p><a href="http://alexisduque.github.com/docker-presentation" class="roll"><span data-title="http://alexisduque.github.com/docker-presentation">http://alexisduque.github.com/docker-presentation</span></a>
+            <a href="http://alexisduque.github.io/blog/2014/08/10/docker-for-developers/" class="roll">http://alexisduque.github.io/blog/2014/08/10/docker-for-developers</a></p>
         </section>
 
 	</div>
